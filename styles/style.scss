@@ -1,0 +1,577 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+@import url(https://pro.fontawesome.com/releases/v5.10.0/css/all.css);
+
+$golden: #d6b384;
+$darkBlue: #263034;
+
+@mixin nameFooterText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  margin: 30px 0px;
+  font-size: 1.2rem;
+  span {
+    font-weight: bold;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "EB Garamond", serif;
+}
+p {
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+body {
+  overscroll-behavior: none;
+  height: 100%;
+  overflow-x: hidden;
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: 10px 30px;
+    background-color: $darkBlue;
+    #logo {
+      font-size: 1.5rem;
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      color: $golden;
+    }
+    #burger {
+      cursor: pointer;
+      font-size: 1.5rem;
+
+      color: $golden;
+    }
+
+    .show-button {
+      display: static;
+    }
+    .hide-button {
+      display: hidden;
+    }
+    .menu {
+      position: absolute;
+      z-index: 4;
+      top: 50px;
+      left: 0px;
+      width: 120%;
+      height: 100vh;
+      background-color: white;
+      color: $darkBlue;
+      transform: translateX(100%);
+      transition: 0.5s ease-in;
+      .menu-item {
+        margin: 20px 30px;
+        padding: 20px 50px;
+        font-size: 2.5rem;
+        .dropdown-item {
+          display: flex;
+          flex-direction: column;
+          font-size: 1.5rem;
+          padding: 15px 0px;
+        }
+      }
+    }
+    .closing {
+      transform: translateX(0);
+    }
+  }
+
+  header {
+    #dark-blue {
+      height: 45vh;
+      background-color: $darkBlue;
+    }
+    #golden {
+      height: 45vh;
+      background-color: $golden;
+    }
+    // #white {
+    //   display: none;
+    // }
+    #header-text {
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1;
+      position: absolute;
+      left: 35px;
+      top: 200px;
+      color: $golden;
+      span {
+        color: white;
+      }
+    }
+    #lady {
+      z-index: 0;
+      position: absolute;
+      top: 38vh;
+      margin-left: -500px;
+      transition: 1s;
+      opacity: 0;
+    }
+  }
+  #text-box {
+    background-image: url(/images/rec-three.svg);
+    background-position: 25% 25%;
+    background-repeat: no-repeat;
+  }
+  .text-container {
+    position: relative;
+    z-index: 1;
+    background-color: $darkBlue;
+    color: white;
+    margin: 60px 20px 25px 20px;
+    padding: 20px 10px;
+    p {
+      font-size: 1.475rem;
+      font-weight: lighter;
+    }
+    hr {
+      margin: 7px auto;
+      height: 2px;
+      background-color: #707070;
+      border-color: transparent;
+      width: 90%;
+    }
+  }
+
+  .white-para {
+    margin: 5px 40px;
+    font-size: 1.475rem;
+  }
+  #text-two {
+    margin-top: 15px;
+    line-height: 1.5;
+  }
+
+  #text-three {
+    background-color: $golden;
+    color: $darkBlue;
+    text-align: center;
+
+    p {
+      padding: 15px;
+    }
+  }
+
+  #text-four {
+    background-color: white;
+    color: $darkBlue;
+    margin: 10px 70px 20px 70px;
+    text-align: center;
+    border: 3px solid $darkBlue;
+    h2 {
+      font-size: 3rem;
+      font-weight: lighter;
+      margin-bottom: 8px;
+    }
+    p {
+      padding: 5px;
+      line-height: 1.5;
+      font-weight: lighter;
+    }
+  }
+  #text-five {
+    margin-top: 3px;
+    padding: 30px 40px;
+    h2 {
+      font-size: 3rem;
+    }
+    ul {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.3rem;
+      padding: 20px;
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    margin-top: 10px;
+    hr {
+      margin: 20px auto;
+      height: 2px;
+      background-color: $darkBlue;
+      border-color: transparent;
+      width: 40%;
+    }
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: lighter;
+      margin: 15px;
+    }
+    input {
+      margin: 10px auto;
+      padding: 15px;
+      width: 90%;
+      border-radius: 0;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+    }
+    input:focus {
+      outline-color: $darkBlue;
+    }
+
+    #kommentar {
+      display: flex;
+      margin: 10px auto;
+      width: 95%;
+      height: 150px;
+    }
+    button {
+      margin: 10px auto;
+      width: 40%;
+      padding: 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: $golden;
+      font-family: "EB Garamond", serif;
+      font-size: 1.2rem;
+      font-weight: lighter;
+    }
+  }
+  footer {
+    background-color: $darkBlue;
+    color: white;
+    padding: 30px;
+    h4 {
+      @include nameFooterText();
+    }
+  }
+  .fagomrader-page {
+    padding-bottom: 40px;
+    h1 {
+      color: $darkBlue;
+      font-size: 3.5rem;
+      padding: 20px;
+      text-align: center;
+    }
+    hr {
+      margin: 7px auto;
+      height: 2px;
+      background-color: $darkBlue;
+      border-color: transparent;
+      width: 90%;
+    }
+    .lists {
+      .list-container {
+        padding: 10px 20px;
+        h3 {
+          font-family: "Montserrat", sans-serif;
+          color: $darkBlue;
+          padding: 8px 0px;
+          font-size: 1.2rem;
+        }
+        ul {
+          font-family: "Montserrat", sans-serif;
+          padding-left: 20px;
+          list-style: none;
+          li {
+            color: $darkBlue;
+            font-size: 1.1rem;
+            padding: 2px;
+          }
+        }
+      }
+    }
+  }
+  .eien-main {
+    height: 60vh;
+    padding: 25px;
+    h1 {
+      margin: 10px 0px;
+    }
+  }
+  .om-oss {
+    height: 60vh;
+    padding: 25px;
+    padding-right: 0px;
+    h2 {
+      font-weight: normal;
+      padding: 20px 0px;
+      font-family: "Montserrat", sans-serif;
+    }
+    h4 {
+      @include nameFooterText();
+      margin: 10px 0px;
+    }
+    i {
+      color: $darkBlue;
+      font-size: 10rem;
+    }
+    .advokatene {
+      // Horizontal scrolling start
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      // ends
+      .advokat-card {
+        padding: 0px 20px 0px 0px;
+        display: inline-block; // this is also required for scrolling
+        i {
+          display: flex;
+          align-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .advokat-page {
+    height: 70%;
+    h1 {
+      padding: 15px 30px;
+    }
+    #rec {
+      position: absolute;
+      left: 15px;
+      top: 120px;
+      z-index: -1;
+      width: 40%;
+    }
+    .advokat-details {
+      padding: 15px 30px;
+      h3 {
+        padding: 10px 0px;
+      }
+      #epost {
+        padding: 10px 0px;
+        a {
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 740px) {
+  body {
+    nav {
+      padding: 10px 40px;
+    }
+    header {
+      margin: 0;
+      width: 100%;
+      #header-text {
+        font-size: 5rem;
+        left: 45px;
+        top: 170px;
+      }
+    }
+    .text-container {
+      margin: 40px;
+      p {
+        padding: 0px 10px;
+      }
+    }
+
+    .white-para {
+      margin: -10px 40px 30px 40px;
+    }
+    .fagomrader-page {
+      .lists {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .list-container {
+          padding: 20px 40px;
+        }
+      }
+    }
+    .advokat-page {
+      #rec {
+        position: absolute;
+        top: 11%;
+        left: 1%;
+        width: 15%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    nav {
+      padding: 15px 15%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        z-index: 0;
+        background-color: transparent;
+        transform: none;
+        font-size: 1.2rem;
+        color: $golden;
+        transition: none;
+        width: auto;
+        height: 10px;
+        .menu-item {
+          margin: 0px;
+          padding: 0px;
+          font-size: 1.2rem;
+        }
+        .dropdown {
+          position: relative;
+          display: inline-block;
+          .dropdown-item {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 20px 16px;
+            a {
+              margin-top: 5px;
+            }
+            a:hover {
+              color: $darkBlue;
+            }
+          }
+        }
+        .dropdown:hover .dropdown-item {
+          display: flex;
+          flex-direction: column;
+        }
+        .menu-item {
+          padding: 0px 10px;
+        }
+      }
+      #burger {
+        display: none;
+      }
+    }
+    header {
+      margin: 0%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "golden dark-blue"
+        "golden whitee";
+
+      #golden {
+        height: 90vh;
+        grid-area: golden;
+      }
+      #dark-blue {
+        grid-area: dark-blue;
+      }
+      #header-text {
+        left: 55%;
+        top: 45%;
+        color: $golden;
+        font-size: 3.5rem;
+        span {
+          color: $darkBlue;
+        }
+      }
+      #lady {
+        z-index: 0;
+        position: absolute;
+        top: 32.5vh;
+        margin-left: -500px;
+        transition: 1s;
+        opacity: 0;
+      }
+    }
+    .main-body {
+      padding: 15px 15%;
+      .table-box {
+        padding: 15px 15%;
+        display: flex;
+        #text-four {
+          margin: 0px 0px 0px 70px;
+          padding: 30px 20px 0px 10px;
+        }
+        #text-five {
+          margin: 0px 60px 0px 0px;
+        }
+      }
+    }
+    .fagomrader-page {
+      padding: 15px 15%;
+    }
+    .om-oss {
+      padding: 15px 15%;
+      // .advokatene {
+      //   display: flex;
+      //   flex-direction: column;
+      // // Horizontal scrolling start
+      // overflow-x: visible;
+      // overflow-y: visible;
+      // white-space: normal;
+      // // -webkit-overflow-scrolling: touch;
+      // // &::-webkit-scrollbar {
+      // //   display: none;
+      // // }
+      // // ends
+      // .advokat-card {
+      //   padding: 0px 20px 0px 0px;
+      //   display: inline-block; // this is also required for scrolling
+      // }
+    }
+    .advokat-page {
+      padding: 15px 15%;
+      #rec {
+        position: absolute;
+        top: 13%;
+        left: 15%;
+        width: 15%;
+      }
+    }
+    .eien-main {
+      padding: 15px 15%;
+    }
+    .contact-info {
+      padding: 15px 15%;
+    }
+    footer {
+      padding: 15px 15%;
+      display: flex;
+      flex-direction: row;
+      h4 {
+        padding: 0px 7%;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1700px) {
+  body {
+    nav {
+      padding: 15px 20%;
+    }
+    header {
+      #header-text {
+        left: 55%;
+      }
+    }
+    #main-body {
+      padding: 15px 20%;
+    }
+    .eien-main {
+      padding: 15px 20%;
+    }
+    .contact-info {
+      padding: 15px 20%;
+    }
+  }
+}
